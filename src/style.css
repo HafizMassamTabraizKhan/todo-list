@@ -77,6 +77,11 @@ i {
   color: #000;
 }
 
+.todo-input-icon {
+  font-size: 16px;
+  rotate: 90deg;
+}
+
 .task-icon {
   cursor: move;
 }
