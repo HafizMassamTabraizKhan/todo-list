@@ -1,17 +1,24 @@
 import './style.css';
-import todos from './modules/todos.js';
+import TodoStore from './modules/TodoStore.js';
+import addTodo from './modules/AddTodo.js';
+import listOfTodos from './modules/RenderTodos.js';
+import editTodo from './modules/EditTodo.js';
 
-const renderTodos = () => {
-  todos.forEach((todo) => {
-    const todoListContent = `<li class="todo">
-      <div> 
-          <input class="completed-btn" type="checkbox" ${todo.compeleted ? 'checked' : ''}> 
-          <p>${todo.description}</p> 
-      </div>
-      <i class="fa-solid fa-ellipsis-vertical task-icon"></i>
-    </li>`;
-    document.querySelector('.todos').innerHTML += (todoListContent);
-  });
-};
+const todoStore = new TodoStore();
 
-renderTodos();
+listOfTodos(todoStore);
+
+// ADD TODO
+document.addEventListener('keydown', (event) => {
+  const { target } = event;
+
+  if (target.classList.contains('todo-input')) {
+    if (event.key === 'Enter') {
+      addTodo(todoStore, target.value);
+      target.value = '';
+    }
+  }
+});
+
+// EDIT TODO
+editTodo(todoStore);
