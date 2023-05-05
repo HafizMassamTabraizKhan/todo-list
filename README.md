@@ -98,6 +98,8 @@ After you're finished please remove all the comments and instructions!
 4- HTML best semantics
 5- CSS and linters
 6- Dynamically render tasks using javascript and webpack
+7- Add and Remove Todo Task
+8- Edit Todo Task
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -171,8 +173,6 @@ You can deploy this project by pushing to your own github page
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-[] Add and Remove Features
-[] Edit Feature
 [] Interactive Features
 [] Use database to save tasks
 [] User Authentication and Authorization feature
