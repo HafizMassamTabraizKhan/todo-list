@@ -176,7 +176,6 @@ You can deploy this project by pushing to your own github page
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-[] Interactive Features
 [] Use database to save tasks
 [] User Authentication and Authorization feature
 [] Create the About section
