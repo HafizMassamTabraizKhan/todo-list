@@ -100,6 +100,9 @@ After you're finished please remove all the comments and instructions!
 6- Dynamically render tasks using javascript and webpack
 7- Add and Remove Todo Task
 8- Edit Todo Task
+9- Remove All Completed Todo Tasks at one click
+10- Interactive List Feature
+11- Save Todo Task to Local Storage
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
