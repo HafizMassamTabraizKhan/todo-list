@@ -22,3 +22,10 @@ document.addEventListener('keydown', (event) => {
 
 // EDIT TODO
 editTodo(todoStore);
+
+// REMOVE ALL COMPLETED TODOS
+const clearBtn = document.querySelector('.clear');
+clearBtn.addEventListener('click', () => {
+  todoStore.removeCompleted();
+  listOfTodos(todoStore);
+});

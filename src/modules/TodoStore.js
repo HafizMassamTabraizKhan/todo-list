@@ -9,10 +9,6 @@ export default class TodoStore {
     this.todosArray = getTodos();
   }
 
-  // getNextIndex() {
-  //   return this.todosArray.length + 1;
-  // }
-
   addTodo(todo) {
     this.todosArray.push(todo);
     setTodos(this.todosArray);
@@ -31,15 +27,30 @@ export default class TodoStore {
     setTodos(this.todosArray);
   }
 
+  completedTodo = (index, completed) => {
+    this.todosArray[index].completed = completed;
+    setTodos(this.todosArray);
+  }
+
+  removeCompleted = () => {
+    this.todosArray = this.todosArray.filter((todo) => todo.completed === false);
+    for (let i = 0; i < this.todosArray.length; i += 1) {
+      this.todosArray[i].index = i + 1;
+    }
+    setTodos(this.todosArray);
+  }
+
   // Show Todos in DOM
   render() {
     let todoListContent = '';
     this.todosArray.forEach((todo) => {
-      todoListContent += `<li class="todo" id="${todo.index}">
+      todoListContent += `
+            <li class="todo" id="${todo.index}">
               <div> 
-                  <input class="completed-btn" type="checkbox" ${todo.compeleted ? 'checked' : ''}>`;
+                  <input class="completed-btn" type="checkbox" ${todo.completed ? 'checked' : ''}>
+                  `;
 
-      if (todo.compeleted) { todoListContent += `<label class="todo-desc edit-todo-input checked" contenteditable="true">${todo.description}</label>`; } else { todoListContent += `<label class="todo-desc edit-todo-input" contenteditable="true">${todo.description}</label>`; }
+      if (todo.completed) { todoListContent += `<label class="todo-desc edit-todo-input checked" contenteditable="true">${todo.description}</label>`; } else { todoListContent += `<label class="todo-desc edit-todo-input" contenteditable="true">${todo.description}</label>`; }
 
       todoListContent += `
               </div>
