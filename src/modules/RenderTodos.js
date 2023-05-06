@@ -1,5 +1,6 @@
 import todosContainer from './DOMVariables.js';
 import removeTodo from './RemoveTodo.js';
+import completedTodos from './updateCompletedTodos.js';
 
 const listOfTodos = (todoStore) => {
   todosContainer.innerHTML = todoStore.render();
@@ -12,6 +13,9 @@ const listOfTodos = (todoStore) => {
       listOfTodos(todoStore);
     });
   }
+
+  // CHECK COMPLETED TODO
+  completedTodos(todoStore);
 };
 
 export default listOfTodos;
